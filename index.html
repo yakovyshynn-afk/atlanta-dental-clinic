@@ -175,6 +175,10 @@ nav{display:flex;align-items:center;gap:34px}
 .promo-card h3{font-size:1.32rem;color:inherit;margin-bottom:8px}
 .promo-card p{font-size:.92rem;opacity:.9}
 .promo-card.l p{color:var(--muted);opacity:1}
+.promo-card .card-cta{margin-top:16px;color:rgba(255,255,255,.92)}
+.promo-card .card-cta:hover{color:#fff}
+.promo-card.l .card-cta{color:var(--green-700)}
+.promo-card.l .card-cta:hover{color:var(--green-600)}
 
 /* DOCTORS */
 .doc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
@@ -533,12 +537,12 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
       <p>Слідкуйте за акціями клініки — ми регулярно робимо якісну стоматологію доступнішою.</p>
     </div>
     <div class="promo-grid">
-      <div class="promo-card g reveal"><span class="p-tag">Акція</span><h3>−10% за активність</h3><p>Отримайте знижку 10% на послуги за активність у наших соцмережах.</p></div>
-      <div class="promo-card d reveal"><span class="p-tag">Комфорт</span><h3>Без шприців та голок</h3><p>Комп'ютерна анестезія STA — лікування без страху, шприців і болю.</p></div>
-      <div class="promo-card l reveal"><span class="p-tag">Естетика</span><h3>Ідеальна усмішка з елайнерами</h3><p>Непомітне вирівнювання зубів прозорими капами.</p></div>
-      <div class="promo-card l reveal"><span class="p-tag">Діагностика</span><h3>Щелепно-лицева ділянка</h3><p>Якісна КТ-діагностика щелеп, суглобів і пазух на власному томографі.</p></div>
-      <div class="promo-card d reveal"><span class="p-tag">Подарунок</span><h3>Подарунковий сертифікат</h3><p>Даруйте близьким здорову усмішку — сертифікат на послуги клініки.</p></div>
-      <div class="promo-card g reveal"><span class="p-tag">Спектр</span><h3>Усі види послуг</h3><p>Від профілактики до імплантації — повний цикл лікування в одному місці.</p></div>
+      <div class="promo-card g reveal"><span class="p-tag">Акція</span><h3>−10% за активність</h3><p>Отримайте знижку 10% на послуги за активність у наших соцмережах.</p><a href="#appointment" class="card-cta js-book" data-service="Консультація">Дізнатися про знижку <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="promo-card d reveal"><span class="p-tag">Комфорт</span><h3>Без шприців та голок</h3><p>Комп'ютерна анестезія STA — лікування без страху, шприців і болю.</p><a href="#appointment" class="card-cta js-book" data-service="Консультація">Записатися на консультацію <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="promo-card l reveal"><span class="p-tag">Естетика</span><h3>Ідеальна усмішка з елайнерами</h3><p>Непомітне вирівнювання зубів прозорими капами.</p><a href="#appointment" class="card-cta js-book" data-service="Ортодонтія">Записатися на ортодонтію <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="promo-card l reveal"><span class="p-tag">Діагностика</span><h3>Щелепно-лицева ділянка</h3><p>Якісна КТ-діагностика щелеп, суглобів і пазух на власному томографі.</p><a href="#appointment" class="card-cta js-book" data-service="Діагностика">Записатися на діагностику <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="promo-card d reveal"><span class="p-tag">Подарунок</span><h3>Подарунковий сертифікат</h3><p>Даруйте близьким здорову усмішку — сертифікат на послуги клініки.</p><a href="#appointment" class="card-cta js-book" data-service="Консультація">Дізнатися більше <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="promo-card g reveal"><span class="p-tag">Спектр</span><h3>Усі види послуг</h3><p>Від профілактики до імплантації — повний цикл лікування в одному місці.</p><a href="#services" class="card-cta">Переглянути послуги <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -587,6 +591,7 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
       <div class="step reveal"><div class="n">3</div><h4>Лікування</h4><p>Комфортні процедури сучасними матеріалами й технологіями.</p></div>
       <div class="step reveal"><div class="n">4</div><h4>Підтримка</h4><p>Рекомендації та профілактичні візити, щоб результат тривав роками.</p></div>
     </div>
+    <div style="text-align:center;margin-top:42px"><a href="#appointment" class="btn btn-primary js-book" data-service="Консультація">Почати з безкоштовної консультації</a></div>
   </div>
 </section>
 
