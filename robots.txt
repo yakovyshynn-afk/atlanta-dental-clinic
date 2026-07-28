@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yakovyshynn-afk.github.io/atlanta-dental-clinic/sitemap.xml

@@ -5,7 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Медичний центр «Атланта» — стоматологія у Кам'янці-Подільському</title>
 <meta name="description" content="Медичний центр «Атланта» — стоматологія повного циклу у Кам'янці-Подільському. Понад 28 років досвіду, 17 спеціалістів, власний комп'ютерний томограф. Запис на прийом онлайн.">
+<link rel="canonical" href="https://yakovyshynn-afk.github.io/atlanta-dental-clinic/">
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Медичний центр «Атланта» — стоматологія у Кам'янці-Подільському">
+<meta property="og:description" content="Стоматологія повного циклу: понад 28 років досвіду, 17 спеціалістів, власний комп'ютерний томограф. Перша консультація безкоштовна.">
+<meta property="og:image" content="https://s.3849.com.ua/section/catalog_album_photos/upload/images/catalog/000/001/783/img8004_64be24a96bbce.jpg">
+<meta property="og:url" content="https://yakovyshynn-afk.github.io/atlanta-dental-clinic/">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Медичний центр «Атланта» — стоматологія у Кам'янці-Подільському">
+<meta name="twitter:description" content="Стоматологія повного циклу: понад 28 років досвіду, 17 спеціалістів, власний комп'ютерний томограф. Перша консультація безкоштовна.">
+<meta name="twitter:image" content="https://s.3849.com.ua/section/catalog_album_photos/upload/images/catalog/000/001/783/img8004_64be24a96bbce.jpg">
 <link rel="icon" href="https://s.3849.com.ua/section/cataloglogo/upload/images/catalog/000/001/556/logo-sajt_5eba830cedd48.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Медичний центр «Атланта»",
+  "image": "https://s.3849.com.ua/section/catalog_album_photos/upload/images/catalog/000/001/783/img8004_64be24a96bbce.jpg",
+  "url": "https://yakovyshynn-afk.github.io/atlanta-dental-clinic/",
+  "telephone": "+380979090860",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "вул. Степана Бандери, 83",
+    "addressLocality": "Кам'янець-Подільський",
+    "addressRegion": "Хмельницька область",
+    "addressCountry": "UA"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "15:00"}
+  ],
+  "sameAs": [
+    "https://www.facebook.com/atlantadent.com.ua",
+    "https://www.instagram.com/atlanta_dental_clinics/"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
@@ -330,9 +367,19 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
   .ticker-track{animation:none}
   .serv-card,.promo-card,.doc-card,.g-item img,.btn-primary{transition:none}
 }
+.skip-link{position:absolute;left:16px;top:-60px;z-index:200;background:var(--green-700);color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;transition:top .2s ease}
+.skip-link:focus{top:16px}
+.hp-field{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
+.doc-cta{margin:12px 20px 20px;display:flex;width:max-content;align-items:center;gap:6px;font-weight:700;font-size:.84rem;color:var(--green-700);cursor:pointer;background:none;border:none;padding:0;font-family:var(--sans);transition:.2s ease}
+.doc-cta svg{transition:.2s ease}
+.doc-cta:hover{color:var(--green-600);gap:9px}
+.modal-mobile-phone{display:none}
+@media(max-width:720px){.modal-mobile-phone{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-weight:700;color:var(--green-700)}}
 </style>
 </head>
 <body>
+
+<a href="#top" class="skip-link">Перейти до основного змісту</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="emblem" viewBox="0 0 120 120"><g fill="currentColor">
@@ -624,8 +671,9 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
               <select id="serv"><option>Консультація</option><option>Діагностика</option><option>Лікування / терапія</option><option>Імплантація та хірургія</option><option>Протезування</option><option>Ортодонтія</option><option>Дитяча стоматологія</option><option>Гігієна та відбілювання</option></select>
             </div>
             <div class="field"><label for="msg">Коментар (необов'язково)</label><textarea id="msg" rows="2" placeholder="Зручний час, побажання…"></textarea></div>
+            <div class="hp-field" aria-hidden="true"><label for="website">Залиште це поле порожнім</label><input id="website" type="text" tabindex="-1" autocomplete="off"></div>
             <button type="submit" class="btn btn-primary">Записатися безкоштовно</button>
-            <p class="form-note">Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.</p>
+            <p class="form-note">Натискаючи кнопку, ви погоджуєтесь на <a href="#" class="js-privacy" style="color:var(--green-700);font-weight:600">обробку персональних даних</a>.</p>
           </form>
           <div class="form-ok" id="formOk">
             <div class="ok-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
@@ -704,13 +752,31 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
           <div class="field"><label for="mServ">Напрямок</label>
             <select id="mServ"><option>Консультація</option><option>Діагностика</option><option>Лікування / терапія</option><option>Імплантація та хірургія</option><option>Протезування</option><option>Ортодонтія</option><option>Дитяча стоматологія</option><option>Гігієна та відбілювання</option></select>
           </div>
+          <div class="hp-field" aria-hidden="true"><label for="mWebsite">Залиште це поле порожнім</label><input id="mWebsite" type="text" tabindex="-1" autocomplete="off"></div>
           <button type="submit" class="btn btn-primary" style="width:100%">Записатися безкоштовно</button>
-          <p class="form-note">Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.</p>
+          <p class="form-note">Натискаючи кнопку, ви погоджуєтесь на <a href="#" class="js-privacy" style="color:var(--green-700);font-weight:600">обробку персональних даних</a>.</p>
+          <div class="modal-mobile-phone"><a href="tel:+380979090860">Або зателефонуйте: +38 097 909-08-60</a></div>
         </form>
         <div class="modal-ok" id="modalOk">
           <div class="ok-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
           <h3>Дякуємо за заявку!</h3><p>Ми зв'яжемося з вами найближчим часом.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="privacyModal" aria-hidden="true" style="z-index:110">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Обробка персональних даних" style="max-width:640px">
+    <button class="modal-close" id="privacyClose" aria-label="Закрити">&times;</button>
+    <div class="modal-body" style="padding:44px 34px 34px">
+      <h3>Як ми обробляємо ваші дані</h3>
+      <p class="msub">Коротко про те, що відбувається з формою запису на цьому сайті.</p>
+      <div style="color:var(--ink-2);font-size:.95rem;line-height:1.7;display:grid;gap:14px">
+        <p>Коли ви заповнюєте форму запису, ми отримуємо ваше ім'я, номер телефону, обраний напрямок лікування та коментар (якщо ви його залишили).</p>
+        <p>Ці дані передаються напряму в закритий чат адміністратора клініки «Атланта» в Telegram — і використовуються лише для того, щоб з вами зв'язатися й підтвердити запис. Ми не продаємо і не передаємо їх третім особам для реклами.</p>
+        <p>Технічно заявка проходить через проміжний сервер (Cloudflare Worker), який миттєво пересилає її в чат клініки й нічого не зберігає та не логує.</p>
+        <p>Щоб видалити свої дані з переписки клініки, зателефонуйте адміністратору: <a href="tel:+380979090860" style="color:var(--green-700);font-weight:600">+38 097 909-08-60</a>.</p>
       </div>
     </div>
   </div>
@@ -723,7 +789,13 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
 
 <script>
 // duplicate ticker items for seamless infinite loop
-(function(){const t=document.getElementById('tickerTrack');if(t)t.innerHTML+=t.innerHTML;})();
+(function(){
+  const t=document.getElementById('tickerTrack');
+  if(!t)return;
+  const original=[...t.children];
+  const clone=original.map(el=>{const c=el.cloneNode(true);c.setAttribute('aria-hidden','true');return c;});
+  clone.forEach(c=>t.appendChild(c));
+})();
 const CDN='https://s.3849.com.ua/section/catalogproducts/upload/images/catalog/products';
 const doctors=[
   {n:"Данч Василь Іванович",r:"Хірург-імплантолог, вища категорія",i:"ДВ",p:"/000/005/058/danc-vasil-ivanovic_5e624eef4827f.jpg"},
@@ -749,6 +821,7 @@ document.getElementById('docGrid').innerHTML=doctors.map((d,idx)=>`
       <img src="${CDN}${d.p}" alt="${d.n}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
     </div>
     <div class="doc-info"><h3>${d.n}</h3><div class="doc-role">${d.r}</div></div>
+    <a href="#appointment" class="doc-cta js-book" data-service="Консультація" data-doctor="${d.n}">Записатися <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>`).join('');
 document.getElementById('showDocsN').textContent='(ще '+(doctors.length-VISIBLE)+')';
 document.getElementById('showDocs').addEventListener('click',function(){
@@ -775,11 +848,17 @@ function wireLeadForm(cfg){
   const ok=document.getElementById(cfg.okId);
   form.addEventListener('submit',function(e){
     e.preventDefault();
+    if(cfg.hpId&&document.getElementById(cfg.hpId).value){
+      // honeypot filled in → almost certainly a bot; pretend success, send nothing
+      form.style.display='none';ok.classList.add('show');
+      return;
+    }
     const data={
       name:document.getElementById(cfg.nameId).value,
       phone:document.getElementById(cfg.phoneId).value,
       service:document.getElementById(cfg.servId).value,
       message:cfg.msgId?document.getElementById(cfg.msgId).value:'',
+      doctor:cfg.includeDoctor?(modal.dataset.doctor||''):'',
       source:cfg.source
     };
     const btn=form.querySelector('button[type="submit"]');
@@ -790,7 +869,7 @@ function wireLeadForm(cfg){
       .catch(()=>{btn.disabled=false;btn.textContent=original;alert('Не вдалося надіслати заявку автоматично. Зателефонуйте нам, будь ласка: '+CLINIC_PHONE);});
   });
 }
-wireLeadForm({formId:'appointForm',okId:'formOk',nameId:'name',phoneId:'phone',servId:'serv',msgId:'msg',source:'Форма на сторінці'});
+wireLeadForm({formId:'appointForm',okId:'formOk',nameId:'name',phoneId:'phone',servId:'serv',msgId:'msg',hpId:'website',source:'Форма на сторінці'});
 
 // MODAL (popup booking) — opens from every target CTA, preselects service if the trigger has data-service
 const modal=document.getElementById('bookModal');
@@ -799,7 +878,9 @@ function openModal(e){
   if(e&&e.preventDefault)e.preventDefault();
   lastFocusedEl=document.activeElement;
   const servSelect=document.getElementById('mServ');
-  const service=e&&e.currentTarget&&e.currentTarget.dataset&&e.currentTarget.dataset.service;
+  const trigger=e&&e.currentTarget&&e.currentTarget.dataset;
+  const service=trigger&&trigger.service;
+  modal.dataset.doctor=(trigger&&trigger.doctor)||'';
   if(servSelect){
     servSelect.selectedIndex=0;
     if(service){
@@ -819,6 +900,7 @@ document.getElementById('modalClose').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
 document.addEventListener('keydown',e=>{
   if(!modal.classList.contains('open'))return;
+  if(privacyModal.classList.contains('open'))return; // let the nested modal handle its own keys
   if(e.key==='Escape'){closeModal();return;}
   if(e.key==='Tab'){
     const focusable=[...modal.querySelectorAll('a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null);
@@ -829,7 +911,36 @@ document.addEventListener('keydown',e=>{
   }
 });
 document.querySelectorAll('.js-book').forEach(b=>b.addEventListener('click',openModal));
-wireLeadForm({formId:'modalForm',okId:'modalOk',nameId:'mName',phoneId:'mPhone',servId:'mServ',source:'Спливаюче вікно'});
+wireLeadForm({formId:'modalForm',okId:'modalOk',nameId:'mName',phoneId:'mPhone',servId:'mServ',hpId:'mWebsite',includeDoctor:true,source:'Спливаюче вікно'});
+
+// PRIVACY MODAL (nested inside booking modal's consent text, also reachable standalone)
+const privacyModal=document.getElementById('privacyModal');
+let lastFocusedPrivacy=null;
+function openPrivacyModal(e){
+  if(e&&e.preventDefault)e.preventDefault();
+  lastFocusedPrivacy=document.activeElement;
+  privacyModal.classList.add('open');privacyModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  document.getElementById('privacyClose').focus();
+}
+function closePrivacyModal(){
+  privacyModal.classList.remove('open');privacyModal.setAttribute('aria-hidden','true');
+  if(!modal.classList.contains('open'))document.body.style.overflow='';
+  if(lastFocusedPrivacy&&lastFocusedPrivacy.focus)lastFocusedPrivacy.focus();
+}
+document.getElementById('privacyClose').addEventListener('click',closePrivacyModal);
+privacyModal.addEventListener('click',e=>{if(e.target===privacyModal)closePrivacyModal();});
+document.addEventListener('keydown',e=>{
+  if(!privacyModal.classList.contains('open'))return;
+  if(e.key==='Escape'){closePrivacyModal();return;}
+  if(e.key==='Tab'){
+    const focusable=[...privacyModal.querySelectorAll('a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null);
+    if(!focusable.length)return;
+    const first=focusable[0],last=focusable[focusable.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+});
+document.querySelectorAll('.js-privacy').forEach(a=>a.addEventListener('click',openPrivacyModal));
 
 // active menu highlight (scroll-spy)
 (function(){
