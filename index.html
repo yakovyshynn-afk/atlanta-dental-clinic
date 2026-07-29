@@ -345,6 +345,12 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
 
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,.8,.3,1),transform .7s cubic-bezier(.16,.8,.3,1)}
 .reveal.in{opacity:1;transform:none}
+
+/* Hero load-in — hidden by default, revealed by Motion (see script at end of body).
+   A JS safety net force-shows these if the animation library fails to load, so the
+   hero is never stuck invisible. */
+.hm-reveal,.hm-reveal-photo{opacity:0}
+@media(prefers-reduced-motion:reduce){.hm-reveal,.hm-reveal-photo{opacity:1}}
 :is(.serv-grid,.serv-list,.doc-grid,.promo-grid,.tst-grid,.step-grid)>.reveal:nth-child(1){transition-delay:.02s}
 :is(.serv-grid,.serv-list,.doc-grid,.promo-grid,.tst-grid,.step-grid)>.reveal:nth-child(2){transition-delay:.08s}
 :is(.serv-grid,.serv-list,.doc-grid,.promo-grid,.tst-grid,.step-grid)>.reveal:nth-child(3){transition-delay:.14s}
@@ -512,20 +518,20 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow">Стоматологія • Кам'янець-Подільський</span>
-      <h1>Здорова усмішка, якій довіряють <span class="accent">понад 28 років</span></h1>
-      <p class="lead">Медичний центр «Атланта» — стоматологія повного циклу: від профілактики до імплантації. Сучасне обладнання, дбайливі лікарі й увага до кожного пацієнта.</p>
-      <div class="hero-actions">
+      <span class="eyebrow hm-reveal">Стоматологія • Кам'янець-Подільський</span>
+      <h1 class="hm-reveal">Здорова усмішка, якій довіряють <span class="accent">понад 28 років</span></h1>
+      <p class="lead hm-reveal">Медичний центр «Атланта» — стоматологія повного циклу: від профілактики до імплантації. Сучасне обладнання, дбайливі лікарі й увага до кожного пацієнта.</p>
+      <div class="hero-actions hm-reveal">
         <a href="#appointment" class="btn btn-primary js-book" data-service="Консультація">Записатися на безкоштовну консультацію</a>
         <a href="#services" class="btn btn-ghost">Наші послуги</a>
       </div>
-      <div class="hero-stats">
+      <div class="hero-stats hm-reveal">
         <div class="stat"><b data-count="28">0</b><span>років досвіду</span></div>
         <div class="stat"><b data-count="17">0</b><span>спеціалістів</span></div>
         <div class="stat"><b>КТ</b><span>власний томограф</span></div>
       </div>
     </div>
-    <div class="hero-photo">
+    <div class="hero-photo hm-reveal-photo">
       <div class="main"><img src="https://images.unsplash.com/photo-1567516364473-233c4b6fcfbe?q=80&w=1000&auto=format&fit=crop" alt="Здорова усмішка з рівними білими зубами"></div>
       <div class="float hp-years hp-rating"><div class="stars">★★★★★</div><span style="margin-top:3px">Пацієнти<br>рекомендують</span></div>
       <div class="float hp-badge">
@@ -1103,6 +1109,56 @@ document.querySelectorAll('.js-privacy').forEach(a=>a.addEventListener('click',o
   }
   addEventListener('scroll',spy,{passive:true});addEventListener('resize',spy);spy();
 })();
+</script>
+
+<!--
+  Motion (vanilla, no React — https://motion.dev) loaded from a CDN as a pure
+  progressive enhancement. Everything above this point (booking forms, modal,
+  menu, doctor list) has zero dependency on this and keeps working unchanged
+  if the CDN is slow, blocked, or down — this block only adds polish on top.
+-->
+<script type="module">
+const heroEls=[...document.querySelectorAll('.hm-reveal')];
+const heroPhoto=document.querySelector('.hm-reveal-photo');
+const revealSafety=setTimeout(()=>{
+  heroEls.forEach(el=>el.style.opacity='');
+  if(heroPhoto)heroPhoto.style.opacity='';
+},900);
+
+try{
+  const{animate,inView}=await import('https://cdn.jsdelivr.net/npm/motion@12.43.0/+esm');
+  clearTimeout(revealSafety);
+
+  // 1) Hero load-in: copy staggers up+in, photo scales in slightly behind it
+  animate(heroEls,{opacity:[0,1],y:[22,0]},{delay:(i)=>.08+i*0.09,duration:.62,ease:[.16,.8,.3,1]});
+  if(heroPhoto)animate(heroPhoto,{opacity:[0,1],scale:[.95,1]},{delay:.18,duration:.7,ease:[.16,.8,.3,1]});
+
+  // 2) FAQ: animate the open transition only (native <details> already handles
+  // close instantly and works with zero JS if this block never runs at all)
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.addEventListener('toggle',()=>{
+      if(!item.open)return;
+      const content=item.querySelector('.faq-a');
+      const target=content.scrollHeight;
+      content.style.overflow='hidden';
+      animate(content,{height:[0,target+'px'],opacity:[0,1]},{duration:.36,ease:[.16,.8,.3,1]})
+        .then(()=>{content.style.height='auto';content.style.overflow='';});
+    });
+  });
+
+  // 3) Tactile spring press-feedback on every button
+  document.querySelectorAll('.btn').forEach(btn=>{
+    btn.addEventListener('pointerdown',()=>animate(btn,{scale:.96},{type:'spring',stiffness:500,damping:26}));
+    const release=()=>animate(btn,{scale:1},{type:'spring',stiffness:400,damping:16});
+    btn.addEventListener('pointerup',release);
+    btn.addEventListener('pointerleave',release);
+  });
+}catch(err){
+  clearTimeout(revealSafety);
+  heroEls.forEach(el=>el.style.opacity='');
+  if(heroPhoto)heroPhoto.style.opacity='';
+  console.warn('Motion CDN unavailable — site works fine, just without the extra animation polish.',err);
+}
 </script>
 </body>
 </html>
