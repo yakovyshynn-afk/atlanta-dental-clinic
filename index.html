@@ -137,6 +137,7 @@ nav{display:flex;align-items:center;gap:34px}
 
 /* SERVICES */
 .serv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.serv-grid.cols-3{grid-template-columns:repeat(3,1fr)}
 .serv-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:30px 26px;transition:transform .4s cubic-bezier(.16,.8,.3,1),box-shadow .4s cubic-bezier(.16,.8,.3,1),border-color .3s ease}
 .serv-card:hover{transform:translateY(-8px);box-shadow:0 26px 50px rgba(9,60,30,.14),0 0 0 1px rgba(18,153,76,.1);border-color:transparent}
 .serv-card .ic{width:56px;height:56px;border-radius:16px;background:var(--mint-100);display:grid;place-items:center;color:var(--green-700);margin-bottom:22px;transition:.4s cubic-bezier(.16,.8,.3,1)}
@@ -402,6 +403,7 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
 .modal-aside .m-phone{font-family:var(--display);font-weight:600;font-size:1.28rem}
 .modal-aside .m-phone small{display:block;font-family:var(--sans);font-weight:600;font-size:.78rem;color:rgba(255,255,255,.7);margin-bottom:5px}
 .modal-body{padding:40px 34px;position:relative}
+.modal-body-top{padding-top:44px}
 .modal-body h3{font-size:1.4rem;margin-bottom:6px}
 .modal-body .msub{color:var(--muted);font-size:.93rem;margin-bottom:20px}
 .modal-ok{display:none;text-align:center;padding:34px 0}
@@ -424,7 +426,7 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
   .hero-photo{order:-1;max-width:440px;margin:0 auto}
   .hero-photo .float.hp-years{right:6px;top:10px}
   .hero-photo .float.hp-badge{left:6px}
-  .serv-grid{grid-template-columns:repeat(2,1fr)}
+  .serv-grid,.serv-grid.cols-3{grid-template-columns:repeat(2,1fr)}
   .about-grid,.cta-grid,.contact-grid{grid-template-columns:1fr;gap:38px}
   .doc-grid{grid-template-columns:repeat(3,1fr)}
   .promo-grid,.tst-grid,.step-grid{grid-template-columns:1fr 1fr;gap:18px}
@@ -435,7 +437,7 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
 }
 @media(max-width:600px){
   .section{padding:72px 0}
-  .serv-grid,.step-grid{grid-template-columns:1fr}
+  .serv-grid,.serv-grid.cols-3,.step-grid{grid-template-columns:1fr}
   .serv-card.feature{grid-column:span 1}
   .doc-grid{grid-template-columns:1fr 1fr;gap:14px}
   .hero{padding:100px 0 52px}
@@ -770,7 +772,7 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
       <h2>Прозоро та без сюрпризів</h2>
       <p>Перша консультація безкоштовна. Точну вартість лікування ви бачите заздалегідь — без прихованих доплат.</p>
     </div>
-    <div class="serv-grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="serv-grid cols-3">
       <div class="serv-card reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="5" y="4" width="14" height="17" rx="2.5" fill="currentColor" opacity=".22"/><rect x="5" y="4" width="14" height="17" rx="2.5" stroke="currentColor" stroke-width="1.6"/><rect x="9" y="2.6" width="6" height="3.6" rx="1.2" fill="currentColor"/><path d="M8.5 10h7M8.5 13h7M8.5 16h4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h3>Безкоштовна консультація</h3><p>Перший огляд і кошторис — без оплати. За потреби додаємо КТ-діагностику, щоб план лікування був точним.</p></div>
       <div class="serv-card reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2.6l7 2.5v5.9c0 4.4-3 7.9-7 9.4-4-1.5-7-5-7-9.4V5.1z" fill="currentColor" opacity=".22"/><path d="M12 2.6l7 2.5v5.9c0 4.4-3 7.9-7 9.4-4-1.5-7-5-7-9.4V5.1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 11.8l2.2 2.2 4.2-4.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Чесні ціни</h3><p>Фіксуємо вартість до початку лікування — жодних несподіванок і прихованих платежів.</p></div>
       <div class="serv-card reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="currentColor" opacity=".22"/><rect x="2.5" y="5" width="19" height="14" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 9.5h19" stroke="currentColor" stroke-width="1.7"/><path d="M6 15h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>Зручна оплата</h3><p>Готівка та картка. За потреби — поетапна оплата зручними для вас частинами.</p></div>
@@ -922,7 +924,7 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
 <div class="modal-overlay" id="privacyModal" aria-hidden="true" style="z-index:110">
   <div class="modal" role="dialog" aria-modal="true" aria-label="Обробка персональних даних" style="max-width:640px">
     <button class="modal-close" id="privacyClose" aria-label="Закрити">&times;</button>
-    <div class="modal-body" style="padding:44px 34px 34px">
+    <div class="modal-body modal-body-top">
       <h3>Як ми обробляємо ваші дані</h3>
       <p class="msub">Коротко про те, що відбувається з формою запису на цьому сайті.</p>
       <div style="color:var(--ink-2);font-size:.95rem;line-height:1.7;display:grid;gap:14px">
