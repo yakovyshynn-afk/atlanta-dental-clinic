@@ -453,7 +453,7 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
   .gal-grid,.promo-grid,.tst-grid{
     display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
     grid-template-columns:unset;grid-template-rows:unset;
-    -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:6px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:6px;overscroll-behavior-x:contain;
   }
   .gal-grid::-webkit-scrollbar,.promo-grid::-webkit-scrollbar,.tst-grid::-webkit-scrollbar{display:none}
   .gal-grid{gap:12px}
