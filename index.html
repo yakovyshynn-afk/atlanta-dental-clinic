@@ -435,12 +435,31 @@ footer{background:var(--green-900);color:rgba(255,255,255,.72);padding:66px 0 32
 }
 @media(max-width:600px){
   .section{padding:72px 0}
-  .serv-grid,.doc-grid,.promo-grid,.tst-grid,.step-grid{grid-template-columns:1fr}
+  .serv-grid,.step-grid{grid-template-columns:1fr}
   .serv-card.feature{grid-column:span 1}
   .doc-grid{grid-template-columns:1fr 1fr;gap:14px}
-  .gal-grid{grid-template-columns:1fr 1fr}
   .hero{padding:100px 0 52px}
   .hero-stats{gap:22px}
+  .hero-photo::before{right:-6px;bottom:-6px}
+
+  /* long CTA labels wrap instead of forcing the pill button wider than the screen */
+  .btn{white-space:normal;max-width:100%;text-align:center;line-height:1.3}
+
+  .foot-grid{grid-template-columns:1fr;gap:32px}
+
+  /* swipeable carousels instead of everything piled into one narrow column */
+  .gal-grid,.promo-grid,.tst-grid{
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+    grid-template-columns:unset;grid-template-rows:unset;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:6px;
+  }
+  .gal-grid::-webkit-scrollbar,.promo-grid::-webkit-scrollbar,.tst-grid::-webkit-scrollbar{display:none}
+  .gal-grid{gap:12px}
+  .gal-grid .g-item{flex:0 0 78%;scroll-snap-align:center;aspect-ratio:4/3}
+  .promo-grid{gap:14px}
+  .promo-grid .promo-card{flex:0 0 80%;scroll-snap-align:center;min-height:200px}
+  .tst-grid{gap:22px}
+  .tst-grid .tst-card{flex:0 0 84%;scroll-snap-align:center}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
